@@ -12,7 +12,7 @@ import Feed
 public final class MainQueueDispatchDecorator<T> {
     private let decoratee: T
     
-    init(decoratee: T) {
+    public init(decoratee: T) {
         self.decoratee = decoratee
     }
     

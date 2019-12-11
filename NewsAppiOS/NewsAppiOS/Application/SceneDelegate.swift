@@ -9,6 +9,7 @@
 import UIKit
 import Feed
 import MVC
+import MVP
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -36,7 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func makeRootViewController() -> UIViewController {
         let tabBar = UITabBarController()
-        tabBar.viewControllers = [mvc()]
+        tabBar.viewControllers = [mvc(), mvp()]
         return tabBar
     }
 
@@ -47,6 +48,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 feedLoader: remoteFeedLoader,
                 imageLoader: remoteImageLoader))
         view.tabBarItem.title = "MVC"
+        return view
+    }
+    
+    private func mvp() -> UIViewController {
+
+        let view = UINavigationController(
+            rootViewController: MVP.FeedUIComposer.feedComposedWith(
+                feedLoader: remoteFeedLoader,
+                imageLoader: remoteImageLoader))
+        view.tabBarItem.title = "MVP"
         return view
     }
 

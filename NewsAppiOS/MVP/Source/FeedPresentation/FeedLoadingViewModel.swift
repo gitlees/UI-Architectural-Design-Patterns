@@ -1,0 +1,17 @@
+//
+//  FeedLoadingViewModel.swift
+//  MVP
+//
+//  Created by Stas Lee on 12/3/19.
+//  Copyright © 2019 Stas Lee. All rights reserved.
+//
+
+import Foundation
+
+struct FeedErrorViewModel {
+    let errorMessage: String
+}
+
+struct FeedLoadingViewModel {
+    let isLoading: Bool
+}
